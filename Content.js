@@ -1,1 +1,1 @@
-Cum guzzling
+Eat a raw egg you putrid rodent
