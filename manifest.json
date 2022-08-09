@@ -5,6 +5,9 @@
     "permissions": [
         "<all_urls>","webRequest","webRequestBlocking"
     ],
+    "icons": {
+        "128": "icon128.png"
+    },
     "background": {
         "scripts": [
           "background.js"
