@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
     "name": "Horizon Blocking",
-    "version": "0.2",
+    "version": "0.3",
     "permissions": [
-        "<all_urls>","webRequest","webRequestBlocking"
+        "<all_urls>","webRequest","webRequestBlocking","activeTab","alert"
     ],
     "icons": {
         "128": "icon128.png"
@@ -11,7 +11,13 @@
     "background": {
         "scripts": [
           "background.js"
-        ],
-        "persistent": true
+        ]
+    },
+    "browser_action": {
+        "default_icon": "icon128.png",
+        "default_popup": "popup.html",
+        "default_title": "blocks ads my dude"
     }
+
+
 }
