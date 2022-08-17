@@ -1,7 +1,9 @@
-// popup.js
 document.addEventListener('DOMContentLoaded', function() {
-  var checkButton = document.getElementById('check');
-  checkButton.addEventListener('click', function() {
-   alert("Hey your button is working!");
+  var checkPageButton = document.getElementById('clickIt');
+  checkPageButton.addEventListener('click', function() {
+
+    chrome.tabs.getSelected(null, function(tab) {
+      alert("YOU HAVE VIRUS PAYPAL ME 20 BUCKS");
+    });
   }, false);
 }, false);
