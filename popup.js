@@ -1,9 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
   var checkPageButton = document.getElementById('clickIt');
   checkPageButton.addEventListener('click', function() {
+  
 
     chrome.tabs.getSelected(null, function(tab) {
-      alert("YOU HAVE VIRUS PAYPAL ME 20 BUCKS");
+      chrome.tabs.reload()
     });
   }, false);
 }, false);
+
+

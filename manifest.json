@@ -1,9 +1,10 @@
 {
     "manifest_version": 2,
     "name": "Horizon Blocking",
+    "description":"epic add blocker def use",
     "version": "0.3",
     "permissions": [
-        "<all_urls>","webRequest","webRequestBlocking","activeTab","alert"
+        "<all_urls>","webRequest","webRequestBlocking","activeTab"
     ],
     "icons": {
         "128": "icon128.png"
