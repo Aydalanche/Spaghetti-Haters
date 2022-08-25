@@ -17509,7 +17509,10 @@ const links = [
     "*://zzdb5p4upiug.com/*",
     "*://s0.2mdn.net/*",
     "*://googleads.g.doubleclick.net/*",
-    "*://pagead2.googlesyndication.com/*"
+    "*://pagead2.googlesyndication.com/*",
+    "*://googleadservices.com/*",
+    "*://tpc.googlesyndication.com/*",
+    "*https://tpc.googlesyndication.com/simgad/*"
 ];
 
 chrome.webRequest.onBeforeRequest.addListener(
