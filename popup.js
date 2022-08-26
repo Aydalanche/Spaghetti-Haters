@@ -1,28 +1,36 @@
-var onOff = true;
+var checkPageButton = document.getElementById('clickIt');
+var theWow = document.getElementById('theWow');
+
+function getSwitch() {
+  chrome.storage.local.get(['mySwitch'], result => {
+    checkPageButton.style.backgroundColor = result.mySwitch ? "green" : "red";
+    checkPageButton.style.borderColor = result.mySwitch ? "green" : "red";
+    checkPageButton.innerHTML = result.mySwitch ? "Enabled" : "Disabled";
+    theWow.innerHTML = result.mySwitch ? "Click down below to disable blocking": "Click down below to enable blocking";
+  });
+}
+
+getSwitch();
 
 document.addEventListener('DOMContentLoaded', function() {
-  var checkPageButton = document.getElementById('clickIt');
-  var theWow = document.getElementById('theWow');
   checkPageButton.addEventListener('click', function() {
-  
-    onOff = !onOff
-    if (onOff == false) {
-      checkPageButton.style.backgroundColor = 'red';
-      checkPageButton.style.borderColor = 'red';
-      checkPageButton.innerHTML = 'Disabled';
-      theWow.innerHTML = 'Click down below to enable blocking';
-    } else {
-      checkPageButton.style.backgroundColor = 'green';
-      checkPageButton.style.borderColor = 'green';
-      checkPageButton.innerHTML = 'Enabled';
-      theWow.innerHTML = 'Click down below to disable blocking';
-    }
+
+    chrome.storage.local.get(['mySwitch'], result => {
+      let changeSwitch = !result.mySwitch;
+      if (changeSwitch == false) {
+        chrome.storage.local.set({mySwitch: false}, () => {
+          getSwitch();
+        });
+      } else {
+        chrome.storage.local.set({mySwitch: true}, () => {
+          getSwitch();
+      });
+    }});
+
+    chrome.runtime.sendMessage({show: "refresh"});
 
     chrome.tabs.getSelected(null, function(tab) {
       chrome.tabs.reload()
     });
   }, false);
 }, false);
-
-
-//:gay people

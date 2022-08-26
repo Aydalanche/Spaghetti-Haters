@@ -1,6 +1,4 @@
 const links = [
-    "https://c.amazon-adsystem.com/*",
-    "https://tpc.googlesyndication.com/*",
     "*://00aaa2d81c1d174.com/*",
     "*://01d0c91c0d.com/*",
     "*://0210bb49cd.com/*",
@@ -17510,20 +17508,38 @@ const links = [
     "*://s0.2mdn.net/*",
     "*://googleads.g.doubleclick.net/*",
     "*://pagead2.googlesyndication.com/*",
-    "*://googleadservices.com/*",
-    "*://tpc.googlesyndication.com/*",
-    "*https://tpc.googlesyndication.com/simgad/*"
+    "*://s0.2mdn.net/*",
+    "*://*.amazon-adsystem.com/*",
+    "*://*.adsafeprotected.com/*",
+    "*://securepubads.g.doubleclick.net/*",
+    "*://csi.gstatic.com/*",
+    "*://partner.googleadservices.com/*",
+    "*://pubads.g.doubleclick.net/*",
+    "*://tpc.googlesyndication.com/*"
 ];
 
-chrome.webRequest.onBeforeRequest.addListener(
-    function(details) { 
-        /*
-        var elems1 = document.getElementById(`[id^="video-ads"]`);
-        elems1.remove();
+chrome.runtime.onInstalled.addListener(() => {
+    chrome.storage.local.set({'mySwitch': true}, function(data){
+        console.log("Switch is enabled")
+    });
 
-        return {cancel: true};
-        */
+})
+var isExtensionOn = true;
+chrome.storage.onChanged.addListener(function (changes, area) {
+    if (area === 'local' && changes.mySwitch) {
+        if (changes.mySwitch.newValue) {
+            isExtensionOn = true;
+         }
+         else {
+             isExtensionOn = false;
+         }
+    }
+});
+
+chrome.webRequest.onBeforeRequest.addListener(
+    function(details) {
+        return {cancel: isExtensionOn};
     },
-    {urls: links},
-    ["blocking"],
+    { urls: links },
+    ["blocking"]
 );
