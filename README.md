@@ -4,8 +4,8 @@ It is currently missing a lot of features of a normal ad blocker because Shane a
 This was made in HTML, CSS, and Javascript
 
 Update 0.4:
-    Connect the on/off switch to the backend
-    Have the button change innerHTML, and CSS properties upon clicking
+    Connect the on/off switch to the backend\n
+    Have the button change innerHTML, and CSS properties upon clicking\n
     Save previous states of button from when it was last closed
     Start using local.storage to transfer and update variables
     
