@@ -14,7 +14,7 @@
 	    text-align: center;
         }
    
-    .button1 {
+    button {
         width:200px;
         background-color: #4CAF50; /* Green */
         border: none;
@@ -39,20 +39,16 @@
     border: 2px solid #4CAf50;
     color: white;
 }
-    .button2 {
-        background:
-    }
+
     
     </style>
     <body>
         <center><img src="icon128.png" alt="Official CSBlocking Logo" ></center>
         <center><h1 id="theWow">Click down below to disable blocking</h1></center>
         <center><button id="clickIt" class="button1">Enabled</button></center>
-        <center><button id="button2" class="button2" ><img src="download.png"></button>></center>
-
+        
         
     
     </body>
     <script src="popup.js"></script>
-    
 </html>

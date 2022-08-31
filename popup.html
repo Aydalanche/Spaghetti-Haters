@@ -15,7 +15,6 @@
         }
    
     button {
-        width:200px;
         background-color: #4CAF50; /* Green */
         border: none;
         color: white;
@@ -28,6 +27,9 @@
     }
     
     .button1 {
+        position: absolute;
+        left: 110px;
+        width:200px;
         background-color: green; 
         color: white; 
         border: 2px solid green;
@@ -39,6 +41,16 @@
     border: 2px solid #4CAf50;
     color: white;
 }
+    .button2 {
+        position: absolute;
+        top: 225px;
+        left: 15px;
+        height: 60px;
+        width: 60px;
+        background-color: white;
+        color: white;
+        border-radius: 4px;
+}
 
     
     </style>
@@ -46,8 +58,7 @@
         <center><img src="icon128.png" alt="Official CSBlocking Logo" ></center>
         <center><h1 id="theWow">Click down below to disable blocking</h1></center>
         <center><button id="clickIt" class="button1">Enabled</button></center>
-        
-        
+        <center><button id="clickIt2" class="button2"><img src="gaming.png" height ="60" width="60" /></button></center>
     
     </body>
     <script src="popup.js"></script>
