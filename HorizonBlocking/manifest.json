@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "CS 5-6 Blocking",
+    "description":"The world's best Chef Boyardee eliminator",
+    "version": "0.4",
+    "permissions": [
+        "<all_urls>",
+        "webRequest",
+        "webRequestBlocking",
+        "activeTab",
+        "tabs",
+        "storage",
+        "unlimitedStorage"
+    ],
+    "icons": {
+        "128": "icon128.png"
+    },
+    "background": {
+        "scripts": [
+          "background.js",
+          "links.js"
+        ]
+    },
+    "browser_action": {
+        "default_icon": "icon128.png",
+        "default_popup": "popup.html",
+        "default_title": "CS 5-6 Blocking"
+    }
+}
